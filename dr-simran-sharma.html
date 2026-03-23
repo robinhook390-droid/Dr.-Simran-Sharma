@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Simran Sharma | Neuro-Psychiatrist | Yamuna Vihar, Delhi</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f9f6ff;--white:#fff;--ink:#111;--mid:#444;--muted:#888;
+  --border:#ede8f5;--soft:#f3eff9;
+  --plum:#4a1a6b;--plum2:#6b2fa0;--plum3:#f0eaf9;
+  --rose:#c2487a;--rose2:#e05a8a;
+  --lavender:#8b5cf6;
+  --gold:#c9953a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--plum)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:68px;background:rgba(249,246,255,0.97);border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
+.nl{display:flex;align-items:center;gap:0.8rem}
+.nl-mark{width:8px;height:8px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 3px rgba(194,72,122,0.2)}
+.nl-text strong{font-family:'Fraunces',serif;font-size:1rem;color:var(--ink);display:block}
+.nl-text span{font-size:0.58rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+.nm{display:flex;gap:2rem;list-style:none}
+.nm a{font-size:0.76rem;color:var(--mid);text-decoration:none;letter-spacing:0.3px;transition:color 0.2s}
+.nm a:hover{color:var(--plum)}
+.nc{background:var(--plum);color:#fff;padding:0.48rem 1.3rem;border-radius:100px;text-decoration:none;font-size:0.75rem;font-weight:500;transition:all 0.3s}
+.nc:hover{background:var(--plum2);transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;padding-top:68px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+
+/* LEFT */
+.hl{
+  padding:75px 7% 70px 6%;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--white);
+  position:relative;z-index:1;
+}
+.hl-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;margin-bottom:2rem;width:fit-content}
+.hl-eyebrow-line{width:30px;height:1px;background:var(--rose)}
+.hl-eyebrow span{font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--rose)}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:lp 1.5s ease-in-out infinite}
+@keyframes lp{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero-name{font-family:'Fraunces',serif;font-size:clamp(2.8rem,4.8vw,5rem);color:var(--ink);line-height:0.95;margin-bottom:1.2rem;letter-spacing:-1px}
+.hero-name em{color:var(--plum);font-style:italic;display:block}
+.hero-qual{font-size:0.8rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.5rem;padding-left:1rem;border-left:2px solid var(--rose)}
+.hero-spec{font-size:0.88rem;color:var(--mid);margin-bottom:2rem;padding-left:1rem;border-left:2px solid var(--rose)}
+.hero-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem}
+.htag{background:var(--plum3);border:1px solid rgba(74,26,107,0.12);color:var(--plum);font-size:0.68rem;padding:0.25rem 0.7rem;border-radius:100px;letter-spacing:0.3px}
+.hero-desc{font-size:0.88rem;color:var(--muted);line-height:1.9;max-width:420px;margin-bottom:2.5rem}
+.hstats{display:flex;gap:0;margin-bottom:2.8rem}
+.hs{padding-right:2rem;margin-right:2rem;border-right:1px solid var(--border)}
+.hs:last-child{border-right:none}
+.hs-n{font-family:'Fraunces',serif;font-size:2.5rem;color:var(--plum);line-height:1}
+.hs-l{font-size:0.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:0.2rem}
+.hbtns{display:flex;gap:0.8rem;flex-wrap:wrap}
+.btn-plum{display:inline-flex;align-items:center;gap:0.5rem;background:var(--plum);color:#fff;padding:0.88rem 1.8rem;border-radius:100px;text-decoration:none;font-weight:500;font-size:0.82rem;transition:all 0.3s}
+.btn-plum:hover{background:var(--plum2);transform:translateY(-2px);box-shadow:0 10px 28px rgba(74,26,107,0.3)}
+.btn-rose{display:inline-flex;align-items:center;gap:0.5rem;background:var(--rose);color:#fff;padding:0.88rem 1.8rem;border-radius:100px;text-decoration:none;font-size:0.82rem;font-weight:500;transition:all 0.3s}
+.btn-rose:hover{background:var(--rose2);transform:translateY(-2px)}
+
+/* RIGHT */
+.hr{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--plum) 0%,#2d0a4a 60%,#1a0530 100%);
+  display:flex;align-items:center;justify-content:center;padding:4rem 2rem;
+}
+.hr::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='40' stroke='rgba(255,255,255,0.03)' fill='none' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='25' stroke='rgba(255,255,255,0.03)' fill='none' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E")}
+.hr::after{content:'';position:absolute;top:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(194,72,122,0.2) 0%,transparent 70%);border-radius:50%}
+.hr-inner{z-index:1;position:relative;width:100%;max-width:340px}
+.hr-img{
+  width:220px;height:220px;border-radius:50%;
+  overflow:hidden;margin:0 auto 1.5rem;
+  border:3px solid rgba(255,255,255,0.15);
+  box-shadow:0 20px 50px rgba(0,0,0,0.4);
+}
+.hr-img img{width:100%;height:100%;object-fit:cover;filter:saturate(0.8) brightness(0.9)}
+.hr-card{background:rgba(255,255,255,0.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.5rem;text-align:center;margin-bottom:1rem}
+.hr-card h3{font-family:'Fraunces',serif;font-size:1.2rem;color:#fff;margin-bottom:0.3rem}
+.hr-card p{font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1rem}
+.hr-stars{color:#fbbf24;font-size:0.9rem;letter-spacing:1px}
+.hr-rnum{font-family:'Fraunces',serif;font-size:1.5rem;color:#fff;margin-left:0.4rem}
+.hr-rlbl{font-size:0.62rem;color:rgba(255,255,255,0.35);display:block;margin-top:0.3rem}
+.hr-badges{display:flex;flex-direction:column;gap:0.6rem}
+.hr-badge-item{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:0.7rem 1rem;display:flex;align-items:center;gap:0.6rem;font-size:0.75rem;color:rgba(255,255,255,0.6)}
+
+/* SECTION COMMONS */
+.sw{padding:90px 6%}
+.sl{font-size:0.58rem;letter-spacing:4px;text-transform:uppercase;color:var(--plum);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.7rem}
+.sl::before{content:'';display:block;width:24px;height:1px;background:var(--plum)}
+h2{font-family:'Fraunces',serif;font-size:clamp(2rem,3.2vw,2.8rem);color:var(--ink);line-height:1.1;margin-bottom:0.8rem}
+.sdesc{font-size:0.88rem;color:var(--muted);line-height:1.85;max-width:520px}
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.65s,transform 0.65s}
+.fade-up.vis{opacity:1;transform:translateY(0)}
+
+/* SPECIALTIES */
+.spec-bg{background:var(--white)}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.scard{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all 0.3s;position:relative;overflow:hidden}
+.scard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--plum),var(--rose));transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
+.scard:hover{box-shadow:0 12px 36px rgba(74,26,107,0.1);transform:translateY(-4px);border-color:rgba(74,26,107,0.2)}
+.scard:hover::after{transform:scaleX(1)}
+.sc-n{font-family:'Fraunces',serif;font-size:3rem;color:rgba(74,26,107,0.05);line-height:1;margin-bottom:0.3rem}
+.sc-ico{font-size:1.8rem;margin-bottom:0.8rem}
+.scard h3{font-size:0.92rem;color:var(--ink);margin-bottom:0.4rem;font-weight:500}
+.scard p{font-size:0.78rem;color:var(--muted);line-height:1.7}
+
+/* GALLERY */
+.gallery-bg{background:var(--soft)}
+.gal-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem}
+.slider-outer{position:relative;border-radius:20px;overflow:hidden}
+.slider-track{display:flex;transition:transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94)}
+.slide{min-width:100%;height:500px;position:relative;overflow:hidden}
+.slide img{width:100%;height:100%;object-fit:cover;filter:brightness(0.55) saturate(0.7);transform:scale(1.04);transition:transform 7s ease}
+.slide.act img{transform:scale(1)}
+.slov{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,5,48,0.97) 0%,rgba(26,5,48,0.3) 55%,transparent 100%)}
+.slcont{position:absolute;bottom:0;left:0;right:0;padding:2.5rem 3rem;display:flex;justify-content:space-between;align-items:flex-end}
+.sltag{display:inline-block;background:var(--rose);color:#fff;font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;padding:0.25rem 0.8rem;border-radius:100px;margin-bottom:0.6rem}
+.sltxt h3{font-family:'Fraunces',serif;font-size:2.2rem;color:#fff;line-height:1.1;margin-bottom:0.3rem}
+.sltxt p{font-size:0.8rem;color:rgba(255,255,255,0.45);max-width:460px}
+.slnum{font-family:'Fraunces',serif;font-size:5rem;color:rgba(255,255,255,0.05);font-weight:700;line-height:1;white-space:nowrap}
+.sarr{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:#fff;font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:all 0.3s}
+.sarr:hover{background:var(--plum);border-color:var(--plum)}
+.sarr-p{left:1rem}.sarr-n{right:1rem}
+.sdots{display:flex;gap:0.5rem;margin-top:1.3rem;justify-content:center}
+.sdot{width:6px;height:6px;border-radius:3px;background:rgba(74,26,107,0.15);cursor:pointer;transition:all 0.4s}
+.sdot.on{width:26px;background:var(--plum)}
+
+/* APPROACH */
+.approach-bg{background:var(--white)}
+.approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:4rem}
+.ap-visual{position:relative}
+.ap-main{border-radius:0 0 60px 0;overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 50px rgba(74,26,107,0.1)}
+.ap-main img{width:100%;height:420px;object-fit:cover;filter:saturate(0.85)}
+.ap-float{position:absolute;top:2rem;right:-1.5rem;background:var(--plum);border-radius:16px;padding:1.3rem 1.5rem;box-shadow:0 12px 32px rgba(74,26,107,0.4)}
+.ap-float .afn{font-family:'Fraunces',serif;font-size:2rem;color:#fff;line-height:1}
+.ap-float .afl{font-size:0.58rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1.5px}
+.ap-points{display:flex;flex-direction:column;gap:1.2rem}
+.apoint{display:flex;gap:1rem;align-items:flex-start;background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.2rem;transition:all 0.3s}
+.apoint:hover{border-color:var(--plum);background:var(--plum3)}
+.ap-ico{width:40px;height:40px;border-radius:10px;flex-shrink:0;background:var(--plum3);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.apoint h4{font-size:0.9rem;color:var(--ink);margin-bottom:0.2rem;font-weight:500}
+.apoint p{font-size:0.78rem;color:var(--muted);line-height:1.6}
+
+/* REVIEWS */
+.rev-bg{background:var(--bg)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:3.5rem}
+.rcard{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.8rem;transition:all 0.3s;position:relative;overflow:hidden}
+.rcard::before{content:'"';position:absolute;top:-1.2rem;right:1.3rem;font-family:'Fraunces',serif;font-size:8rem;color:rgba(74,26,107,0.04);line-height:1}
+.rcard:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(74,26,107,0.1);border-color:rgba(74,26,107,0.2)}
+.rc-stars{color:var(--gold);font-size:0.82rem;letter-spacing:2px;margin-bottom:0.8rem}
+.rcard p{font-size:0.83rem;color:var(--mid);line-height:1.85;font-style:italic;margin-bottom:1.2rem}
+.rc-name strong{display:block;font-size:0.85rem;color:var(--ink);margin-bottom:2px;font-weight:500}
+.rc-name span{font-size:0.68rem;color:var(--muted)}
+
+/* FEATURES */
+.feat-bg{background:var(--plum);position:relative;overflow:hidden}
+.feat-bg::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(194,72,122,0.15) 0%,transparent 70%);border-radius:50%}
+.feat-bg .sl{color:rgba(255,255,255,0.5)}
+.feat-bg .sl::before{background:rgba(255,255,255,0.3)}
+.feat-bg h2{color:#fff}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3.5rem;position:relative;z-index:1}
+.fcard{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.5rem;text-align:center;transition:all 0.3s}
+.fcard:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.15);transform:translateY(-3px)}
+.fcard-ico{font-size:2rem;margin-bottom:0.8rem}
+.fcard h4{font-size:0.85rem;color:#fff;margin-bottom:0.3rem;font-weight:500}
+.fcard p{font-size:0.72rem;color:rgba(255,255,255,0.45);line-height:1.6}
+
+/* CONTACT */
+.contact-bg{background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;margin-top:3.5rem;align-items:start}
+.cboxes{display:flex;flex-direction:column;gap:1rem}
+.cbox{display:flex;gap:1rem;align-items:flex-start;background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.2rem;transition:all 0.3s}
+.cbox:hover{border-color:var(--plum);box-shadow:0 4px 16px rgba(74,26,107,0.08)}
+.cbox-ic{width:42px;height:42px;border-radius:10px;flex-shrink:0;background:var(--plum3);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.cbox h5{font-size:0.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:0.3rem}
+.cbox p,.cbox a{font-size:0.9rem;color:var(--ink);text-decoration:none;transition:color 0.2s}
+.cbox a:hover{color:var(--plum)}
+
+/* APPOINTMENT */
+.appt-bg{background:var(--bg)}
+.appt-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.perks{display:flex;flex-direction:column;gap:0.8rem;margin-top:1.8rem}
+.perk{display:flex;align-items:center;gap:0.7rem;font-size:0.83rem;color:var(--muted)}
+.perk::before{content:'✓';color:var(--plum);font-weight:600}
+.aform{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:2.5rem;box-shadow:0 12px 40px rgba(74,26,107,0.07)}
+.aform h3{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--ink);margin-bottom:0.3rem}
+.aform .fmeta{font-size:0.76rem;color:var(--muted);margin-bottom:1.8rem}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fg{margin-bottom:0.9rem}
+.fg label{display:block;font-size:0.58rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:0.35rem}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:0.83rem;outline:none;transition:border-color 0.3s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--plum);background:#fff}
+.fg textarea{resize:vertical;min-height:75px}
+.fsub{width:100%;background:var(--plum);color:#fff;border:none;padding:0.9rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;transition:all 0.3s;margin-top:0.3rem}
+.fsub:hover{background:var(--plum2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(74,26,107,0.3)}
+
+/* FOOTER */
+footer{background:var(--plum);padding:2rem 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.fbrand strong{font-family:'Fraunces',serif;font-size:1rem;color:#fff}
+.fbrand p{font-size:0.66rem;color:rgba(255,255,255,0.4);margin-top:2px}
+footer small{font-size:0.66rem;color:rgba(255,255,255,0.3)}
+.fab{position:fixed;bottom:1.5rem;right:1.5rem;z-index:300;background:var(--plum);color:#fff;padding:0.82rem 1.5rem;border-radius:100px;text-decoration:none;font-weight:500;font-size:0.8rem;display:flex;align-items:center;gap:0.5rem;box-shadow:0 8px 28px rgba(74,26,107,0.5);transition:all 0.3s}
+.fab:hover{background:var(--plum2);transform:translateY(-3px)}
+
+@media(max-width:900px){
+  .nm{display:none}
+  .hero{grid-template-columns:1fr}.hr{display:none}
+  .hl{padding:70px 5% 60px}
+  .spec-grid,.rev-grid,.approach-grid,.feat-grid,.contact-grid,.appt-grid{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr 1fr}
+  .frow2{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center}
+}
+@media(max-width:600px){
+  .spec-grid,.rev-grid,.feat-grid{grid-template-columns:1fr}
+  .slide{height:360px}.slcont{padding:1.5rem}.sltxt h3{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nl">
+    <div class="nl-mark"></div>
+    <div class="nl-text">
+      <strong>Dr. Simran Sharma</strong>
+      <span>Neuro-Psychiatrist &middot; Yamuna Vihar</span>
+    </div>
+  </div>
+  <ul class="nm">
+    <li><a href="#specialties">Specialties</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#appointment">Appointment</a></li>
+  </ul>
+  <a href="#appointment" class="nc">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hl">
+    <div class="hl-eyebrow">
+      <div class="live-dot"></div>
+      <div class="hl-eyebrow-line"></div>
+      <span>Yamuna Vihar, Delhi</span>
+    </div>
+    <h1 class="hero-name">Dr. Simran<em>Sharma</em></h1>
+    <div class="hero-qual">MBBS &middot; MD &middot; Consultant Neuro-Psychiatrist</div>
+    <div class="hero-spec">Neuro-Psychiatric Disorders &bull; De-addiction &bull; Sexual Disorders</div>
+    <div class="hero-tags">
+      <span class="htag">&#128137; Depression & Anxiety</span>
+      <span class="htag">&#9889; De-addiction</span>
+      <span class="htag">&#129504; OCD & Psychosis</span>
+      <span class="htag">&#127752; LGBTQ+ Friendly</span>
+      <span class="htag">&#128105; Women-Owned</span>
+    </div>
+    <p class="hero-desc">Consultant Neuro-Psychiatrist specialising in mental health, neuropsychiatric disorders, de-addiction therapy and sexual health disorders. Practising at Signature Heart & Multispeciality Hospital, Yamuna Vihar, Delhi.</p>
+    <div class="hstats">
+      <div class="hs"><div class="hs-n">4.8<span style="font-size:1.4rem">&#9733;</span></div><div class="hs-l">Rating</div></div>
+      <div class="hs"><div class="hs-n">29</div><div class="hs-l">Reviews</div></div>
+      <div class="hs"><div class="hs-n">6PM</div><div class="hs-l">Opens Today</div></div>
+    </div>
+    <div class="hbtns">
+      <a href="tel:08920210003" class="btn-plum">&#128222; 089202 10003</a>
+      <a href="#appointment" class="btn-rose">Book Appointment &rarr;</a>
+    </div>
+  </div>
+
+  <div class="hr">
+    <div class="hr-inner">
+      <div class="hr-img">
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80" alt="Neurology">
+      </div>
+      <div class="hr-card">
+        <h3>Dr. Simran Sharma</h3>
+        <p>Consultant Neuro-Psychiatrist</p>
+        <div>
+          <span class="hr-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="hr-rnum">4.8</span>
+          <span class="hr-rlbl">29 Patient Reviews</span>
+        </div>
+      </div>
+      <div class="hr-badges">
+        <div class="hr-badge-item">&#127973; Signature Heart &amp; Multispeciality Hospital</div>
+        <div class="hr-badge-item">&#127752; LGBTQ+ Friendly &nbsp;&bull;&nbsp; &#128105; Women-Owned</div>
+        <div class="hr-badge-item">&#9855; Wheelchair Accessible &nbsp;&bull;&nbsp; &#128196; Google Pay</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section class="sw spec-bg" id="specialties">
+  <div class="sl fade-up">Areas of Expertise</div>
+  <h2 class="fade-up">Conditions &amp;<br>Specialisations</h2>
+  <div class="spec-grid fade-up">
+    <div class="scard"><div class="sc-n">01</div><div class="sc-ico">&#129488;</div><h3>Depression &amp; Anxiety</h3><p>Comprehensive diagnosis and treatment of major depression, generalised anxiety, panic disorder and phobias.</p></div>
+    <div class="scard"><div class="sc-n">02</div><div class="sc-ico">&#9889;</div><h3>De-addiction Therapy</h3><p>Evidence-based de-addiction treatment for alcohol, drugs and substance use disorders with long-term recovery support.</p></div>
+    <div class="scard"><div class="sc-n">03</div><div class="sc-ico">&#128137;</div><h3>OCD &amp; Related Disorders</h3><p>Specialist management of obsessive-compulsive disorder, hoarding and related neuropsychiatric conditions.</p></div>
+    <div class="scard"><div class="sc-n">04</div><div class="sc-ico">&#129504;</div><h3>Psychosis &amp; Schizophrenia</h3><p>Expert care for schizophrenia, bipolar disorder, psychosis and other serious mental health conditions.</p></div>
+    <div class="scard"><div class="sc-n">05</div><div class="sc-ico">&#128248;</div><h3>Sexual Disorders</h3><p>Confidential, non-judgemental assessment and treatment of sexual dysfunction and related disorders.</p></div>
+    <div class="scard"><div class="sc-n">06</div><div class="sc-ico">&#129504;</div><h3>Neuro-Psychiatric Disorders</h3><p>Epilepsy with psychiatric symptoms, dementia, ADHD, autism spectrum and neurological mental health conditions.</p></div>
+    <div class="scard"><div class="sc-n">07</div><div class="sc-ico">&#128564;</div><h3>Sleep Disorders</h3><p>Insomnia, hypersomnia, nightmares and other sleep disturbances with psychiatric evaluation and management.</p></div>
+    <div class="scard"><div class="sc-n">08</div><div class="sc-ico">&#128101;</div><h3>Child &amp; Adolescent Psychiatry</h3><p>ADHD, behavioural issues, school refusal, anxiety and developmental disorders in children and teens.</p></div>
+    <div class="scard"><div class="sc-n">09</div><div class="sc-ico">&#129309;</div><h3>Relationship &amp; Counselling</h3><p>Individual and couple counselling for emotional, relationship and psychosexual concerns in a safe space.</p></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sw gallery-bg" id="gallery">
+  <div class="gal-top">
+    <div>
+      <div class="sl fade-up">Our Facility</div>
+      <h2 class="fade-up">Signature Hospital<br>Infrastructure</h2>
+    </div>
+    <div style="display:flex;gap:0.7rem">
+      <button class="sarr sarr-p" onclick="slide(-1)">&#8592;</button>
+      <button class="sarr sarr-n" onclick="slide(1)">&#8594;</button>
+    </div>
+  </div>
+  <div class="slider-outer">
+    <div class="slider-track" id="sTrack">
+      <div class="slide act">
+        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1400&q=85" alt="Consultation">
+        <div class="slov"></div>
+        <div class="slcont"><div class="sltxt"><div class="sltag">&#129658; Consultation</div><h3>Private Consultation</h3><p>Confidential, comfortable and safe consultation environment for all patients</p></div><div class="slnum">01</div></div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1400&q=85" alt="Neuro">
+        <div class="slov"></div>
+        <div class="slcont"><div class="sltxt"><div class="sltag">&#129504; Neurology</div><h3>Neuropsychiatric Assessment</h3><p>Advanced neurological and psychiatric evaluation with complete testing facilities</p></div><div class="slnum">02</div></div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1400&q=85" alt="Hospital">
+        <div class="slov"></div>
+        <div class="slcont"><div class="sltxt"><div class="sltag">&#127973; Hospital</div><h3>Signature Multispeciality Hospital</h3><p>Full-service multispeciality hospital with modern facilities in Yamuna Vihar</p></div><div class="slnum">03</div></div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=1400&q=85" alt="Testing">
+        <div class="slov"></div>
+        <div class="slcont"><div class="sltxt"><div class="sltag">&#128300; Diagnostics</div><h3>Diagnostic Testing</h3><p>EEG, psychological testing and neuropsychiatric evaluation services</p></div><div class="slnum">04</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="sdots" id="sDots">
+    <span class="sdot on" onclick="goSlide(0)"></span>
+    <span class="sdot" onclick="goSlide(1)"></span>
+    <span class="sdot" onclick="goSlide(2)"></span>
+    <span class="sdot" onclick="goSlide(3)"></span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sw approach-bg" id="about">
+  <div class="approach-grid">
+    <div class="ap-visual fade-up">
+      <div class="ap-main">
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=700&q=80" alt="Neuro">
+      </div>
+      <div class="ap-float">
+        <div class="afn">4.8&#9733;</div>
+        <div class="afl">Top Rated</div>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="sl">About Dr. Simran Sharma</div>
+      <h2>A Safe Space for<br>Mental Health</h2>
+      <p class="sdesc" style="margin-bottom:2rem">Dr. Simran Sharma is a Consultant Neuro-Psychiatrist (MBBS, MD) at Signature Heart &amp; Multispeciality Hospital, Yamuna Vihar. She provides compassionate, evidence-based care for neuropsychiatric disorders, de-addiction and sexual health in a safe, non-judgemental environment.</p>
+      <div class="ap-points">
+        <div class="apoint"><div class="ap-ico">&#127752;</div><div><h4>LGBTQ+ Friendly Practice</h4><p>A safe, inclusive and non-judgemental space welcoming all patients regardless of gender or orientation.</p></div></div>
+        <div class="apoint"><div class="ap-ico">&#128105;</div><div><h4>Women-Owned &amp; Led</h4><p>Women-owned practice with a special focus on women's mental health, hormonal mood disorders and support.</p></div></div>
+        <div class="apoint"><div class="ap-ico">&#9855;</div><div><h4>Fully Accessible</h4><p>Wheelchair-accessible car park, entrance and seating. Gender-neutral toilets. Nursing room available.</p></div></div>
+        <div class="apoint"><div class="ap-ico">&#128203;</div><div><h4>Appointment Recommended</h4><p>Prior appointment recommended for minimal waiting time and dedicated consultation slots.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sw rev-bg" id="reviews">
+  <div class="sl fade-up">Patient Feedback</div>
+  <h2 class="fade-up">4.8&#9733; &mdash; What Patients<br>Say About Dr. Simran</h2>
+  <div class="rev-grid">
+    <div class="rcard fade-up">
+      <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>Dr. Simran is an exceptional psychiatrist. She listened patiently and helped me through my depression without any judgement. Life-changing treatment.</p>
+      <div class="rc-name"><strong>Anonymous Patient</strong><span>Google Review &middot; Depression</span></div>
+    </div>
+    <div class="rcard fade-up">
+      <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>My brother's de-addiction journey has been successful thanks to Dr. Simran's structured treatment. Her approach is both medical and compassionate.</p>
+      <div class="rc-name"><strong>Rakesh M.</strong><span>Google Review &middot; De-addiction</span></div>
+    </div>
+    <div class="rcard fade-up">
+      <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>Very professional and caring. She creates a completely safe space to discuss sensitive issues. Highly recommend for anyone needing psychiatric help.</p>
+      <div class="rc-name"><strong>Priya S.</strong><span>Google Review &middot; General Psychiatry</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="sw feat-bg">
+  <div class="sl fade-up">Clinic Features</div>
+  <h2 class="fade-up" style="color:#fff">Everything We<br>Offer</h2>
+  <div class="feat-grid">
+    <div class="fcard fade-up"><div class="fcard-ico">&#9855;</div><h4>Wheelchair Accessible</h4><p>Accessible car park, entrance and seating for all patients</p></div>
+    <div class="fcard fade-up"><div class="fcard-ico">&#127752;</div><h4>LGBTQ+ Friendly</h4><p>Safe and inclusive space welcoming all identities</p></div>
+    <div class="fcard fade-up"><div class="fcard-ico">&#128203;</div><h4>By Appointment</h4><p>Appointment-based for dedicated, focused consultation time</p></div>
+    <div class="fcard fade-up"><div class="fcard-ico">&#128196;</div><h4>Google Pay</h4><p>Convenient digital payment via Google Pay accepted</p></div>
+    <div class="fcard fade-up"><div class="fcard-ico">&#128118;</div><h4>Nursing Room</h4><p>Dedicated nursing room available for mothers visiting with infants</p></div>
+    <div class="fcard fade-up"><div class="fcard-ico">&#9977;</div><h4>Gender-Neutral Toilets</h4><p>Gender-neutral restroom facilities for all patients</p></div>
+    <div class="fcard fade-up"><div class="fcard-ico">&#128105;</div><h4>Women-Owned</h4><p>Women-owned and led practice with focus on women's mental health</p></div>
+    <div class="fcard fade-up"><div class="fcard-ico">&#127973;</div><h4>Multispeciality Hospital</h4><p>Located inside Signature Heart &amp; Multispeciality Hospital</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sw contact-bg" id="contact">
+  <div class="sl fade-up">Find Us</div>
+  <h2 class="fade-up">Location &amp;<br>Contact</h2>
+  <div class="contact-grid">
+    <div class="cboxes fade-up">
+      <div class="cbox"><div class="cbox-ic">&#128222;</div><div><h5>Phone</h5><a href="tel:08920210003">089202 10003</a></div></div>
+      <div class="cbox"><div class="cbox-ic">&#127973;</div><div><h5>Hospital</h5><p>Signature Heart &amp; Multispeciality Hospital<br>C-2/41A, Main Service Ln, Block C<br>Yamuna Vihar, Delhi &ndash; 110053</p></div></div>
+      <div class="cbox"><div class="cbox-ic">&#128336;</div><div><h5>OPD Timings</h5><p>Opens 6:00 PM &mdash; Evening OPD<br>Appointment recommended</p></div></div>
+      <div class="cbox"><div class="cbox-ic">&#128196;</div><div><h5>Payments</h5><p>Google Pay accepted</p></div></div>
+      <a href="https://maps.google.com/?q=Signature+Heart+Multispeciality+Hospital+Yamuna+Vihar+Delhi+110053" target="_blank" class="btn-plum" style="justify-content:center;border-radius:100px">&#128205; Get Directions</a>
+    </div>
+    <div class="fade-up">
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;overflow:hidden;height:300px">
+        <iframe src="https://maps.google.com/maps?q=Yamuna+Vihar+Delhi+110053&output=embed" width="100%" height="100%" style="border:0" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div style="margin-top:1rem;background:var(--plum3);border:1px solid rgba(74,26,107,0.15);border-radius:12px;padding:1rem 1.2rem">
+        <p style="font-size:0.78rem;color:var(--mid);line-height:1.6">&#128203; <strong style="color:var(--ink)">Appointment recommended</strong> — Call or book online before visiting to ensure dedicated consultation time with Dr. Simran Sharma.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section class="sw appt-bg" id="appointment">
+  <div class="appt-grid">
+    <div class="fade-up">
+      <div class="sl">Book Consultation</div>
+      <h2>Your Mental Health<br>Matters</h2>
+      <p class="sdesc">Fill in the form and we will confirm your appointment at the earliest. Evening OPD from 6 PM.</p>
+      <div class="perks">
+        <div class="perk">MBBS MD Consultant Neuro-Psychiatrist</div>
+        <div class="perk">Safe, confidential and non-judgemental space</div>
+        <div class="perk">LGBTQ+ friendly &amp; women-owned practice</div>
+        <div class="perk">De-addiction, psychiatry &amp; sexual health</div>
+        <div class="perk">Evening OPD — Opens 6 PM</div>
+      </div>
+    </div>
+    <div class="aform fade-up">
+      <h3>Request a Callback</h3>
+      <p class="fmeta">Confidential &mdash; We will get back to you promptly</p>
+      <div class="frow2">
+        <div class="fg"><label>Name</label><input type="text" placeholder="Your name (optional)"></div>
+        <div class="fg"><label>Phone Number</label><input type="tel" placeholder="Mobile number"></div>
+      </div>
+      <div class="fg"><label>Concern</label>
+        <select>
+          <option value="" disabled selected>Select your concern</option>
+          <option>Depression / Anxiety</option>
+          <option>De-addiction (Alcohol / Drugs)</option>
+          <option>OCD</option>
+          <option>Schizophrenia / Psychosis</option>
+          <option>Bipolar Disorder</option>
+          <option>Sexual Disorder</option>
+          <option>Sleep Disorder</option>
+          <option>Child / Adolescent Psychiatry</option>
+          <option>Relationship / Counselling</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="frow2">
+        <div class="fg"><label>Preferred Date</label><input type="date"></div>
+        <div class="fg"><label>Preferred Time</label>
+          <select>
+            <option>6:00 PM</option><option>6:30 PM</option><option>7:00 PM</option>
+            <option>7:30 PM</option><option>8:00 PM</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg"><label>Brief Details (Optional &mdash; Confidential)</label><textarea placeholder="You may share brief details. Everything is strictly confidential."></textarea></div>
+      <button class="fsub" onclick="this.textContent='&#10003; Request Sent! We will call you back shortly.';this.style.background='#1a7a3d'">Confirm Appointment Request &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fbrand">
+    <strong>Dr. Simran Sharma &mdash; Neuro-Psychiatrist</strong>
+    <p>Signature Heart &amp; Multispeciality Hospital, Yamuna Vihar, Delhi &ndash; 110053 &nbsp;&middot;&nbsp; 089202 10003</p>
+  </div>
+  <small>&copy; 2025 Dr. Simran Sharma. All rights reserved.</small>
+</footer>
+
+<a href="tel:08920210003" class="fab">&#128222; Call Now</a>
+
+<script>
+let cur=0,tot=4;
+const track=document.getElementById('sTrack');
+const dots=document.querySelectorAll('.sdot');
+const slides=document.querySelectorAll('.slide');
+function goSlide(n){slides[cur].classList.remove('act');cur=(n+tot)%tot;slides[cur].classList.add('act');track.style.transform=`translateX(-${cur*100}%)`;dots.forEach((d,i)=>d.classList.toggle('on',i===cur));}
+function slide(d){goSlide(cur+d);}
+setInterval(()=>slide(1),5000);
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')}),{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
